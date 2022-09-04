@@ -11,14 +11,36 @@
     <title>Javascript</title>
 </head>
 <body>
-
-    <header>
+    <header class="__header-flex">
         <img src="./imagenes e iconos/coin.svg" alt="">
+        <nav>
+            <ul class="__nav-flex">
+                <li>
+                    <a href="">Inicio</a>
+                    <a href="">Pagá tu cuota</a>
+                    <a href="">Contacto</a>
+                    <a href="">Ayuda</a>
+                </li>
+            </ul>
+        </nav>
     </header>
+    <main>
+        <h1>Simulador de préstamos personales</h1>
 
-    <h1>Simulador de préstamos personales</h1>
-
-    
-    <script src="./desafio-complementario.js"></script>
+        <form action="prestamo" method="get">
+            <p>Nombre: <input type="text" name="nombre" size="40"></p>
+            <p>Año de nacimiento: <input type="number" name="nacido" min="1942"></p>
+            <p>Sexo:
+              <input type="radio" name="hm" value="h"> Hombre
+              <input type="radio" name="hm" value="m"> Mujer
+              <input type="radio" name="hm" value="x"> Prefiero no decir
+            </p>
+            <p>
+              <input type="submit" value="Enviar">
+              <input type="reset" value="Borrar">
+            </p>
+        </form>
+    </main>
+    <script src="./trabajofinalparte1.js"></script>
 </body>
 </html>
