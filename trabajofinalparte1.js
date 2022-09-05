@@ -48,7 +48,7 @@ alert("Terminás abonando por mes $" + (prestamoCliente / cuotasPrestamo  * 1.70
 }
 
 let confirmacionPrestamo = prompt("Para confirmar y mostrarte el importe e intereses de tu préstamo, ingresá 'si', de lo contrario, ingresá 'no'");
-const confirmacionTrue = "si";
+let confirmacionTrue = "si";
 const confirmacionFalse = "no";
 
 for(let i = 0; i < 2; i++){
@@ -63,19 +63,6 @@ for(let i = 0; i < 2; i++){
   }
 }
 
-/*
-function confirmacion(confirmacionPrestamo){
- confirmacionPrestamo = prompt("Para confirmar y mostrarte el importe e intereses de tu préstamo, ingresá 'si', de lo contrario, ingresá 'no'");
- if (confirmacionPrestamo == "si"){
-  alert ("Felicitaciones! A continuación, te mostraremos el detalle de tu préstamo personal.");
- }else if (confirmacionPrestamo == "no"){
-  alert("Lamentamos que no quieras continuar, si cambiás de opinión, tus $" + prestamoCliente + " te esperan!");
- }else{
-  alert(confirmacionPrestamo + " No es un dato válido, probá de nuevo, de lo contario vas a tener que comenzar de nuevo.");
- }
-}
-*/
-
 if(cuotasPrestamo == 12 && confirmacionPrestamo == "si"){
   alert("Préstamo personal solicitado: $" + prestamoCliente + ". Monto mensual a abonar: $" + (prestamoCliente / cuotasPrestamo * 1.35).toFixed(2) + ". Intereses por cuota: $" + (prestamoCliente / cuotasPrestamo * 1.35 - (prestamoCliente / cuotasPrestamo)).toFixed(2) + ". Intereses totales: $" + ((prestamoCliente / cuotasPrestamo * 1.35 - (prestamoCliente / cuotasPrestamo)) * cuotasPrestamo).toFixed(2));
 }else if(cuotasPrestamo == 24 && confirmacionPrestamo == "si"){
@@ -85,10 +72,6 @@ if(cuotasPrestamo == 12 && confirmacionPrestamo == "si"){
 }
 
 
-
-
-
-// AGREGAR SWITCH, FUNCION FLECHA y LO QUE RESTE DE VER. 
 
 
 
