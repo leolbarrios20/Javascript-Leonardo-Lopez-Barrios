@@ -27,6 +27,12 @@ while(edadCliente > 79){
   
 let prestamoCliente = prompt("Cuanto dinero necesitás? (ingresá el monto sin puntos)");
 
+const cliente = {
+  nombre: nombreCliente,
+  edad: edadCliente,
+  prestamoSolicitado: prestamoCliente
+};
+
 while(prestamoCliente > 200000 || prestamoCliente < 10000){           
     alert("No es un importe válido. Recordá que podés pedir un préstamo desde $10.000 hasta $200.000");
     prestamoCliente = prompt("Cuanto dinero necesitás? (ingresá el monto sin puntos)");
@@ -53,7 +59,7 @@ alert("Terminás abonando por mes $" + (prestamoCliente / cuotasPrestamo  * 1.70
 }
 
 let confirmacionPrestamo = prompt("Para confirmar y mostrarte el importe e intereses de tu préstamo, ingresá 'si', de lo contrario, ingresá 'no'");
-let confirmacionTrue = "si";
+const confirmacionTrue = "si";
 const confirmacionFalse = "no";
 
 for(let i = 0; i < 2; i++){
@@ -76,6 +82,10 @@ for(let i = 0; i < 2; i++){
   }else if(cuotasPrestamo == 36 && confirmacionPrestamo == "si"){
     alert("Préstamo personal solicitado: $" + array[0] + ". Monto mensual a abonar: $" + (array[0] / array[1] * 1.70).toFixed(2) + ". Intereses por cuota: $" + (array[0] / array[1] * 1.70 - (array[0] / array[1])).toFixed(2) + ". Intereses totales: $" + ((array[0] / array[1] * 1.70 - (array[0] / array[1])) * array[1]).toFixed(2));
   }
+}
+
+if(confirmacionPrestamo == "si"){
+  alert(cliente.nombre + "! Nos alegra haberte ayudado. Volvé cuando quieras!");
 }
 
 
