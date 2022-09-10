@@ -32,12 +32,17 @@ while(prestamoCliente > 200000 || prestamoCliente < 10000){
     prestamoCliente = prompt("Cuanto dinero necesitás? (ingresá el monto sin puntos)");
 }
 
+let array = [prestamoCliente];
+alert("Estás por simular un préstamo por $" + array);
+
 let cuotasPrestamo = prompt("En cuantas cuotas querés abonar tu préstamo? Elegi entre 12, 24 y 36 cuotas.");
 
 while(cuotasPrestamo != 12 && cuotasPrestamo != 24 && cuotasPrestamo != 36){
     alert("Recordá que las cuotas pueden ser entre 12, 24 y 36");
     cuotasPrestamo = prompt("Elegí entre 12, 24 y 36");
 }
+
+array.push(cuotasPrestamo);
 
 if(cuotasPrestamo == 12){
   alert("Terminás abonando por mes $" + (prestamoCliente / cuotasPrestamo * 1.35).toFixed(2));
@@ -63,12 +68,14 @@ for(let i = 0; i < 2; i++){
   }
 }
 
-if(cuotasPrestamo == 12 && confirmacionPrestamo == "si"){
-  alert("Préstamo personal solicitado: $" + prestamoCliente + ". Monto mensual a abonar: $" + (prestamoCliente / cuotasPrestamo * 1.35).toFixed(2) + ". Intereses por cuota: $" + (prestamoCliente / cuotasPrestamo * 1.35 - (prestamoCliente / cuotasPrestamo)).toFixed(2) + ". Intereses totales: $" + ((prestamoCliente / cuotasPrestamo * 1.35 - (prestamoCliente / cuotasPrestamo)) * cuotasPrestamo).toFixed(2));
-}else if(cuotasPrestamo == 24 && confirmacionPrestamo == "si"){
-  alert("Préstamo personal solicitado: $" + prestamoCliente + ". Monto mensual a abonar: $" + (prestamoCliente / cuotasPrestamo * 1.50).toFixed(2) + ". Intereses por cuota: $" + (prestamoCliente / cuotasPrestamo * 1.50 - (prestamoCliente / cuotasPrestamo)).toFixed(2) + ". Intereses totales: $" + ((prestamoCliente / cuotasPrestamo * 1.50 - (prestamoCliente / cuotasPrestamo)) * cuotasPrestamo).toFixed(2));
-}else if(cuotasPrestamo == 36 && confirmacionPrestamo == "si"){
-  alert("Préstamo personal solicitado: $" + prestamoCliente + ". Monto mensual a abonar: $" + (prestamoCliente / cuotasPrestamo * 1.70).toFixed(2) + ". Intereses por cuota: $" + (prestamoCliente / cuotasPrestamo * 1.70 - (prestamoCliente / cuotasPrestamo)).toFixed(2) + ". Intereses totales: $" + ((prestamoCliente / cuotasPrestamo * 1.70 - (prestamoCliente / cuotasPrestamo)) * cuotasPrestamo).toFixed(2));
+for(let i = 0; i < 2; i++){
+  if(cuotasPrestamo == 12 && confirmacionPrestamo == "si"){
+    alert("Préstamo personal solicitado: $" + array[0] + ". Monto mensual a abonar: $" + (array[0] / array[1] * 1.35).toFixed(2) + ". Intereses por cuota: $" + (array[0] / array[1] * 1.35 - (array[0] / array[1])).toFixed(2) + ". Intereses totales: $" + ((array[0] / array[1] * 1.35 - (array[0] / array[1])) * array[1]).toFixed(2));
+  }else if(cuotasPrestamo == 24 && confirmacionPrestamo == "si"){
+    alert("Préstamo personal solicitado: $" + array[0] + ". Monto mensual a abonar: $" + (array[0] / array[1] * 1.50).toFixed(2) + ". Intereses por cuota: $" + (array[0] / array[1] * 1.50 - (array[0] / array[1])).toFixed(2) + ". Intereses totales: $" + ((array[0] / array[1] * 1.50 - (array[0] / array[1])) * array[1]).toFixed(2));
+  }else if(cuotasPrestamo == 36 && confirmacionPrestamo == "si"){
+    alert("Préstamo personal solicitado: $" + array[0] + ". Monto mensual a abonar: $" + (array[0] / array[1] * 1.70).toFixed(2) + ". Intereses por cuota: $" + (array[0] / array[1] * 1.70 - (array[0] / array[1])).toFixed(2) + ". Intereses totales: $" + ((array[0] / array[1] * 1.70 - (array[0] / array[1])) * array[1]).toFixed(2));
+  }
 }
 
 
