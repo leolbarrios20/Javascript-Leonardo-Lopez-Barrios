@@ -27,19 +27,13 @@ while(edadCliente > 79){
   
 let prestamoCliente = prompt("Cuanto dinero necesitás? (ingresá el monto sin puntos)");
 
-const cliente = {
-  nombre: nombreCliente,
-  edad: edadCliente,
-  prestamoSolicitado: prestamoCliente
-};
-
 while(prestamoCliente > 200000 || prestamoCliente < 10000){           
     alert("No es un importe válido. Recordá que podés pedir un préstamo desde $10.000 hasta $200.000");
     prestamoCliente = prompt("Cuanto dinero necesitás? (ingresá el monto sin puntos)");
 }
 
-let array = [prestamoCliente];
-alert("Estás por simular un préstamo por $" + array);
+let arrayCliente = [nombreCliente, edadCliente, prestamoCliente];
+alert("Estás por simular un préstamo por $" + arrayCliente[2]);
 
 let cuotasPrestamo = prompt("En cuantas cuotas querés abonar tu préstamo? Elegi entre 12, 24 y 36 cuotas.");
 
@@ -48,7 +42,14 @@ while(cuotasPrestamo != 12 && cuotasPrestamo != 24 && cuotasPrestamo != 36){
     cuotasPrestamo = prompt("Elegí entre 12, 24 y 36");
 }
 
-array.push(cuotasPrestamo);
+const propiedadesCliente = {
+  nombre: nombreCliente,
+  edad: edadCliente,
+  prestamoSolicitado: prestamoCliente,
+  cuotasSolicitadas: cuotasPrestamo
+};
+
+arrayCliente.push(cuotasPrestamo);
 
 if(cuotasPrestamo == 12){
   alert("Terminás abonando por mes $" + (prestamoCliente / cuotasPrestamo * 1.35).toFixed(2));
@@ -74,21 +75,23 @@ for(let i = 0; i < 2; i++){
   }
 }
 
-for(let i = 0; i < 2; i++){
+for(let i = 0; i < 1; i++){
   if(cuotasPrestamo == 12 && confirmacionPrestamo == "si"){
-    alert("Préstamo personal solicitado: $" + array[0] + ". Monto mensual a abonar: $" + (array[0] / array[1] * 1.35).toFixed(2) + ". Intereses por cuota: $" + (array[0] / array[1] * 1.35 - (array[0] / array[1])).toFixed(2) + ". Intereses totales: $" + ((array[0] / array[1] * 1.35 - (array[0] / array[1])) * array[1]).toFixed(2));
+    alert("Préstamo personal solicitado: $" + arrayCliente[2] + ". Monto mensual a abonar: $" + (arrayCliente[2] / arrayCliente[3] * 1.35).toFixed(2) + ". Intereses por cuota: $" + (arrayCliente[2] / arrayCliente[3] * 1.35 - (arrayCliente[2] / arrayCliente[3])).toFixed(2) + ". Intereses totales: $" + ((arrayCliente[2] / arrayCliente[3] * 1.35 - (arrayCliente[2] / arrayCliente[3])) * arrayCliente[3]).toFixed(2));
   }else if(cuotasPrestamo == 24 && confirmacionPrestamo == "si"){
-    alert("Préstamo personal solicitado: $" + array[0] + ". Monto mensual a abonar: $" + (array[0] / array[1] * 1.50).toFixed(2) + ". Intereses por cuota: $" + (array[0] / array[1] * 1.50 - (array[0] / array[1])).toFixed(2) + ". Intereses totales: $" + ((array[0] / array[1] * 1.50 - (array[0] / array[1])) * array[1]).toFixed(2));
+    alert("Préstamo personal solicitado: $" + arrayCliente[2] + ". Monto mensual a abonar: $" + (arrayCliente[2] / arrayCliente[3] * 1.50).toFixed(2) + ". Intereses por cuota: $" + (arrayCliente[2] / arrayCliente[3] * 1.50 - (arrayCliente[2] / arrayCliente[3])).toFixed(2) + ". Intereses totales: $" + ((arrayCliente[2] / arrayCliente[3] * 1.50 - (arrayCliente[2] / arrayCliente[3])) * arrayCliente[3]).toFixed(2));
   }else if(cuotasPrestamo == 36 && confirmacionPrestamo == "si"){
-    alert("Préstamo personal solicitado: $" + array[0] + ". Monto mensual a abonar: $" + (array[0] / array[1] * 1.70).toFixed(2) + ". Intereses por cuota: $" + (array[0] / array[1] * 1.70 - (array[0] / array[1])).toFixed(2) + ". Intereses totales: $" + ((array[0] / array[1] * 1.70 - (array[0] / array[1])) * array[1]).toFixed(2));
+    alert("Préstamo personal solicitado: $" + arrayCliente[2] + ". Monto mensual a abonar: $" + (arrayCliente[2] / arrayCliente[3] * 1.70).toFixed(2) + ". Intereses por cuota: $" + (arrayCliente[2] / arrayCliente[3] * 1.70 - (arrayCliente[2] / arrayCliente[3])).toFixed(2) + ". Intereses totales: $" + ((arrayCliente[2] / arrayCliente[3] * 1.70 - (arrayCliente[2] / arrayCliente[3])) * arrayCliente[3]).toFixed(2));
   }
 }
 
 if(confirmacionPrestamo == "si"){
-  alert(cliente.nombre + "! Nos alegra haberte ayudado. Volvé cuando quieras!");
+  alert(propiedadesCliente.nombre + "! Nos alegra haberte ayudado. Ahora, si estás desde un ordenador, podés visualizar los datos ingresados, haciendo click derecho - inspeccionar, y luego dirigite a la solapa 'consola'. De lo contrario, desestimá este mensaje.");
 }
 
-
+const buscado = arrayCliente.filter(cliente => propiedadesCliente.edad > 18);
+console.log("Datos ingresados: ");
+console.log(propiedadesCliente);
 
 
 
