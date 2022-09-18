@@ -1,14 +1,37 @@
 *{
     text-decoration: none;
     list-style: none;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
+
+main{
+    background-color: #BA5624;
+}
+
+#parrafo_container{
+    margin: 0 auto;
+    margin-top: 100px;
+    max-width: 700px;
+    border: black 2px solid;
+}
+
+#parrafo1, #parrafo2, #parrafo3, #parrafo4{
+    font-size: 35px;
+    text-align: center;
+    font-family: 'Prompt', sans-serif;
+    color: rgb(220, 220, 220);
+    text-shadow: 2px 2px 2px black;
+}   
 
 .__header-flex{
     display: flex;
     align-content: center;
     align-items: center;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .__nav-flex{
@@ -20,7 +43,8 @@
 }
 
 header{
-    text-align: center;
+    background-color: #381D2A;
+    padding: 10px;
 }
 
 header nav ul {
@@ -29,11 +53,14 @@ header nav ul {
 
 header nav ul li a {
     font-size: 20px;
-    padding: 0 20px 0 20px;
+    padding: 0 30px 0 60px;
+    color: rgb(220, 220, 220);
+    font-family: 'Prompt', sans-serif;
 }
 
 header img{
     width: 70px;
+    filter: invert(100%);
 }
 
 main form{
@@ -41,9 +68,50 @@ main form{
 }
 
 h1{
-    color: rgb(12, 12, 12);
     text-align: center;
     font-family: 'Prompt', sans-serif;
-    font-size: 60px;
+    font-size: 50px;
+    padding: 30px 0 10px 0;
+    color: rgb(220, 220, 220);
+    text-shadow: 2px 2px 2px black;
+}
+
+h2{
+    text-align: center;
+    font-family: 'Prompt', sans-serif;
+    font-size: 35px;
+    color: rgb(220, 220, 220);
+    text-shadow: 2px 2px 2px black;
+}
+
+.__imgContainer{
+    text-align: center;
+    padding: 50px;
+}
+
+.__imgContainer .img__main{
+    max-width: 30%;
+    height: auto;
+}
+
+main #button a{
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #3a52a0;
+    font-size: 18px;
+    transition: 0.2s all;
+    box-shadow: 1px 2px 5px black;
+    color: white;
+}
+
+main #button{
+    text-align: center;
+    padding: 50px;
+}
+
+main #button:active{
+    transform: scale(0.98);
 }
 
