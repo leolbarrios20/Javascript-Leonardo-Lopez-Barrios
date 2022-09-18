@@ -100,24 +100,24 @@ for(let i = 0; i < 1; i++){
     parrafo2.innerHTML = (montoMensual12);
     parrafo3.innerHTML = (interesesPorCuota12);
     parrafo4.innerHTML = (interesesTotales12);
-    tituloPrincipal.innerHTML = ("Detalle de tu préstamo personal");
-    tituloSecundario.innerHTML = `Gracias ${propiedadesCliente.nombre}!`;
+    tituloPrincipal.innerHTML = ("Gracias" + nombreCliente);
+    tituloSecundario.innerHTML = `Detalle de tu préstamo personal`;
   }else if(cuotasPrestamo == 24 && confirmacionPrestamo == "si"){
     alert("Felicitaciones! A continuación te mostraremos el detalle de tu préstamo personal.");
     parrafo1.innerHTML = (prestamoSolicitadoFinal24);
     parrafo2.innerHTML = (montoMensual24);
     parrafo3.innerHTML = (interesesPorCuota24);
     parrafo4.innerHTML = (interesesTotales24);
-    tituloPrincipal.innerHTML = ("Detalle de tu préstamo personal");
-    tituloSecundario.innerHTML = `Gracias ${propiedadesCliente.nombre}!`;
+    tituloPrincipal.innerHTML = ("Gracias" + nombreCliente);
+    tituloSecundario.innerHTML = `Detalle de tu préstamo personal`;
   }else if(cuotasPrestamo == 36 && confirmacionPrestamo == "si"){
     alert("Felicitaciones! A continuación te mostraremos el detalle de tu préstamo personal.");
     parrafo1.innerHTML = (prestamoSolicitadoFinal36);
     parrafo2.innerHTML = (montoMensual36);
     parrafo3.innerHTML = (interesesPorCuota36);
     parrafo4.innerHTML = (interesesTotales36);
-    tituloPrincipal.innerHTML = ("Detalle de tu préstamo personal");
-    tituloSecundario.innerHTML = `Gracias ${propiedadesCliente.nombre}!`;
+    tituloPrincipal.innerHTML = ("Gracias" + nombreCliente);
+    tituloSecundario.innerHTML = `Detalle de tu préstamo personal`;
   }else if(confirmacionPrestamo === confirmacionFalse){
     alert(`Lamentamos que no quieras continuar, si cambiás de opinión, tus $${prestamoCliente} te esperan!`);
     tituloPrincipal.innerHTML = ("Volvé pronto " + nombreCliente + "!");
