@@ -7,18 +7,23 @@
 }
 
 main{
-    background-color: #BA5624;
-}
+    background-image: url(https://imagenes.elpais.com/resizer/4oLrYXOG4cD5TI-Lr7-TveA_Fgo=/980x0/cloudfront-eu-central-1.images.arcpublishing.com/prisa/42E5UMZFJ5AVPCP3RWNIDZJZTA.jpg);
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.295);
+    background-blend-mode: darken;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}   
 
 #parrafo_container{
     margin: 0 auto;
     margin-top: 100px;
     max-width: 700px;
-    border: black 2px solid;
 }
 
-#parrafo1, #parrafo2, #parrafo3, #parrafo4{
-    font-size: 35px;
+#parrafo1, #parrafo2, #parrafo3, #parrafo4, #parrafo5{
+    font-size: 25px;
     text-align: center;
     font-family: 'Prompt', sans-serif;
     color: rgb(220, 220, 220);
@@ -43,7 +48,7 @@ main{
 }
 
 header{
-    background-color: #381D2A;
+    background-color: #0e5068;
     padding: 10px;
 }
 
@@ -67,31 +72,13 @@ main form{
     text-align: center;
 }
 
-h1{
-    text-align: center;
-    font-family: 'Prompt', sans-serif;
-    font-size: 50px;
-    padding: 30px 0 10px 0;
-    color: rgb(220, 220, 220);
-    text-shadow: 2px 2px 2px black;
-}
 
-h2{
+h1, h2{
     text-align: center;
     font-family: 'Prompt', sans-serif;
     font-size: 35px;
     color: rgb(220, 220, 220);
     text-shadow: 2px 2px 2px black;
-}
-
-.__imgContainer{
-    text-align: center;
-    padding: 50px;
-}
-
-.__imgContainer .img__main{
-    max-width: 30%;
-    height: auto;
 }
 
 main #button a{
@@ -115,3 +102,120 @@ main #button:active{
     transform: scale(0.98);
 }
 
+.tituloFlex{
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 50px;
+    align-items: center;
+    padding-top: 30px;
+    margin: 0 auto;
+}
+
+.requisitosContainer{
+    text-align: left;
+    background-color: rgba(207, 207, 207, 0.596);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 30px;
+    margin: 10px;
+    max-width: 550px;
+    height: 300px;
+
+}
+
+.requisitosContainer .flex-parrafo .icon-arrow{
+    width: 25px;
+}
+
+.requisitosContainer .flex-parrafo{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.requisitosContainer h6{
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 600;
+    color: white;
+    text-shadow: 2px 1px 2px black;
+}
+
+.requisitosContainer .flex-parrafo .requisitos_parrafo{
+    padding: 10px;
+    font-size: 20px;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 500;
+}
+
+.conseguiCredito{
+    padding: 25px;
+    border-radius: 20px;
+    max-width: 600px;
+    height: 300px;
+}
+
+.conseguiCredito h1{
+    font-size: 55px;
+}
+
+.conseguiCredito h2{
+    color: rgb(243, 243, 243);
+    font-weight: 500;
+}
+
+.conseguiCredito h3{
+    color: rgb(238, 238, 238);
+    padding-top: 20px;
+    font-size: 25px;
+    font-family: 'Prompt', sans-serif;
+    text-shadow: 2px 2px 2px black;
+    font-weight: 400;
+}
+
+.conseguiCredito h1, h2, h3{
+    text-align: left;
+}
+
+.main-container{
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 20px;
+    padding: 25px;
+}
+
+#miFormulario{
+    width: 500px;
+    background-color: rgb(255, 255, 255);
+    margin: 0 auto;
+    padding: 50px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-main-form{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    padding-top: 100px;
+}
+
+#formApellido, #formEdad, #formPrestamo, #formCuotas, #formNombre{
+    border-radius: 10px;
+}
+
+#miFormulario label{
+    font-size: 20px;
+}
+
+#miFormulario input{
+    padding: 10px;
+}
+
+#nombreForm, #apellidoForm, #edadForm, #cuotasForm, #prestamoForm{
+    color: red;
+}

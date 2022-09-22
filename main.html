@@ -19,7 +19,6 @@
             <ul class="__nav-flex">
                 <li>
                     <a href="./index.html">Inicio</a>
-                    <a href="">Pagá tu cuota</a>
                     <a href="">Contacto</a>
                     <a href="">Ayuda</a>
                 </li>
@@ -27,16 +26,49 @@
         </nav>
     </header>
     <main>
-        <h1 id="tituloPrincipal">SIMULADOR</h1>
-        <h2 id="tituloSecundario"></h2>
-        <h3 id="tituloTerciario"></h3>
-        <div id="parrafo_container">
-            <p id="parrafo1"></p>
-            <p id="parrafo2"></p>
-            <p id="parrafo3"></p>
-            <p id="parrafo4"></p>
+    <div class="flex-main-form">
+        <div class="main-container">
+            <h1 id="tituloPrincipal"></h1>
+            <h2 id="tituloSecundario"></h2>
+            <h3 id="tituloTerciario"></h3>
+            <div id="parrafo_container">
+                <p id="parrafo1"></p>
+                <p id="parrafo2"></p>
+                <p id="parrafo3"></p>
+                <p id="parrafo4"></p>
+                <p id="parrafo5"></p>
+            </div>
         </div>
-        <script src="./simulador.js"></script>
+        <form id="miFormulario"> 
+            <label for="formNombre">Nombre del Cliente</label>
+            <input id="formNombre" type="text">
+            <p id="nombreForm"></p>
+            <br><br>
+    
+            <label for="formApellido">Apellido del Cliente</label>
+            <input id="formApellido" type="text">
+            <p id="apellidoForm"></p>
+            <br><br>
+    
+            <label for="formEdad">Edad del Cliente</label>
+            <input id="formEdad" type="text">
+            <p id="edadForm"></p>
+            <br><br>
+
+            <label for="formCuotas">Cuotas</label>
+            <input id="formCuotas" type="text">
+            <p id="cuotasForm"></p>
+            <br><br>
+
+            <label for="formPrestamo">Prestamo</label>
+            <input id="formPrestamo" type="text">
+            <p id="prestamoForm"></p>
+            <br><br>
+            <button>Enviar</button>
+            <button type="reset">Reiniciar</button>
+        </form>
+    </div>
     </main>
+    <script src="./prueba.js"></script>
 </body>
 </html>
