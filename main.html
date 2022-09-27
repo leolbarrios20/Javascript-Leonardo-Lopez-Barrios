@@ -11,62 +11,65 @@
     <title>Javascript</title>
 </head>
 <body>
-    <header class="__header-flex">
-        <a href="./index.html">
-            <img src="./imagenes e iconos/coin.svg" alt="logo de prestamo">
-        </a>
-        <nav>
-            <ul class="__nav-flex">
-                <li>
-                    <a href="./index.html">Inicio</a>
-                    <a href="">Contacto</a>
-                    <a href="">Ayuda</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-    <div class="flex-main-form">
-        <div class="main-container">
-            <h1 id="tituloPrincipal"></h1>
-            <h2 id="tituloSecundario"></h2>
-            <h3 id="tituloTerciario"></h3>
-            <div id="parrafo_container">
-                <p id="parrafo1"></p>
-                <p id="parrafo2"></p>
-                <p id="parrafo3"></p>
-                <p id="parrafo4"></p>
-                <p id="parrafo5"></p>
-            </div>
-        </div>
-        <form id="miFormulario"> 
-            <label for="formNombre">Nombre del Cliente</label>
-            <input id="formNombre" type="text">
-            <p id="nombreForm"></p>
-            <br><br>
-    
-            <label for="formApellido">Apellido del Cliente</label>
-            <input id="formApellido" type="text">
-            <p id="apellidoForm"></p>
-            <br><br>
-    
-            <label for="formEdad">Edad del Cliente</label>
-            <input id="formEdad" type="text">
-            <p id="edadForm"></p>
-            <br><br>
-
-            <label for="formCuotas">Cuotas</label>
-            <input id="formCuotas" type="text">
-            <p id="cuotasForm"></p>
-            <br><br>
-
-            <label for="formPrestamo">Prestamo</label>
-            <input id="formPrestamo" type="text">
-            <p id="prestamoForm"></p>
-            <br><br>
-            <button>Enviar</button>
-        </form>
-    </div>
+    <section class="main">
+        <header class="__header-flex">
+            <a href="./index.html">
+                <img src="./imagenes e iconos/coin.svg" alt="logo de prestamo">
+            </a>
+            <nav>
+                <ul class="__nav-flex">
+                    <li>
+                        <a href="./index.html">Inicio</a>
+                        <a href="">Contacto</a>
+                        <a href="">Ayuda</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main id="child">
+            <form id="formulario"> 
+                <div class="formularioFlex">
+                    <label for="nombre">Nombre</label>
+                    <input id="nombre" type="text" placeholder="Ingresá tu nombre" required>
+                </div>
+                <div class="formularioFlex">   
+                    <label for="apellido">Apellido</label>
+                    <input id="apellido" type="text"  placeholder="Ingresá tu apellido" required>
+                </div>
+                <div class="formularioFlex">
+                    <label for="genero">Sexo</label>
+                    <select name="genero" id="genero" >
+                        <option value="masculino">Masculino</option>
+                        <option value="femenino">Femenino</option>
+                        <option value="noRelevante">Prefiero no decir</option>
+                    </select>
+                </div>
+                <div class="formularioFlex">
+                    <label for="edad">Edad</label>
+                    <input id="edad" type="number" min="18" max="79" placeholder="Debés tener al menos 18 años." required>
+                </div>
+                <div class="formularioFlex">
+                    <label for="prestamo">Préstamo a simular</label>
+                    <input id="prestamo" type="number" min="10000" max="200000" placeholder="Pedí entre $10.000 y $200.000" required>
+                </div>
+                <div class="formularioFlex">
+                    <label for="cuotas">Cuotas</label>
+                    <input id="cuotas" type="number" placeholder="Elegí entre 12, 24 y 36 cuotas" required>
+                </div>
+                <button>Enviar</button>
+                <button id="reiniciar">Simular otro préstamo</button>
+            </form>
+    </section>
+    <section class="datosIngresados">
+        <h2 id="datosIngresados"></h2>
+        <p id="nombreCliente"></p>
+        <p id="edadCliente"></p>
+        <p id="prestamoCliente"></p>
+        <p id="montoMensual"></p>
+        <p id="interesesCuota"></p>
+        <p id="interesesTotales"></p>
+        <p id="cuotasTotales"></p>
+    </section>
     </main>
     <script src="./simulador.js"></script>
 </body>
