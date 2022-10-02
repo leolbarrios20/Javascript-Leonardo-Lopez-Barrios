@@ -6,7 +6,7 @@
     margin: 0;
 }
 
-.main{
+.background{
     background-image: url(https://imagenes.elpais.com/resizer/4oLrYXOG4cD5TI-Lr7-TveA_Fgo=/980x0/cloudfront-eu-central-1.images.arcpublishing.com/prisa/42E5UMZFJ5AVPCP3RWNIDZJZTA.jpg);
     background-position: center;
     background-color: rgba(0, 0, 0, 0.295);
@@ -29,6 +29,7 @@
     font-family: 'Prompt', sans-serif;
     color: rgb(220, 220, 220);
     text-shadow: 2px 2px 2px black;
+    padding: 15px;
 }   
 
 .__header-flex{
@@ -55,14 +56,17 @@ header{
 }
 
 header nav ul {
-    padding-left:0;
+    margin-top: 20px;
+    padding-left: 0;
 }
 
 header nav ul li a {
     font-size: 20px;
-    padding: 0 30px 0 60px;
     color: rgb(220, 220, 220);
     font-family: 'Prompt', sans-serif;
+    text-decoration: none;
+
+    padding: 5px 20px 5px 20px;
 }
 
 header img{
@@ -81,28 +85,6 @@ h1, h2{
     font-size: 35px;
     color: rgb(220, 220, 220);
     text-shadow: 2px 2px 2px black;
-}
-
-main #button a{
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    background-color: #3a52a0;
-    font-size: 18px;
-    transition: 0.2s all;
-    box-shadow: 1px 2px 5px black;
-    color: white;
-}
-
-main #button, button{
-    text-align: center;
-    padding: 20px;
-    
-}
-
-main #button:active, button:active{
-    transform: scale(0.98);
 }
 
 .tituloFlex{
@@ -124,8 +106,7 @@ main #button:active, button:active{
     padding: 30px;
     margin: 10px;
     max-width: 550px;
-    height: 300px;
-
+    height: 400px;
 }
 
 .requisitosContainer .flex-parrafo .icon-arrow{
@@ -192,16 +173,6 @@ main #button:active, button:active{
     justify-content: space-evenly;
 }
 
-#miFormulario{
-    width: 500px;
-    background: linear-gradient(45deg,#0e5068, #0376a0);
-    margin: 0 auto;
-    padding: 40px;
-    border-radius: 20px; 
-    display: flex;
-    flex-direction: column;
-}
-
 main button{
     background-color: #3a52a0;
     color: white;
@@ -223,14 +194,6 @@ main button{
     padding-bottom: 10px;
 }
 
-#miFormulario input{
-    padding: 10px;
-}
-
-
-#tituloPrincipal, #tituloSecundario{
-    text-align: center;
-}
 
 @media screen and (max-width: 500px) {
  
@@ -248,12 +211,12 @@ main button{
     display: flex;
     flex-direction: column;
     max-width: 500px;
+    max-height: 750px;
     background: linear-gradient(45deg,#0e5068, #0376a0);
     border-radius: 15px;
-    margin: 0 auto;
     position: relative;
     top: 20px;
-    padding: 10px;
+    padding: 7px;
 }
 
 .formularioFlex{
@@ -261,7 +224,7 @@ main button{
     flex-direction: column;
     justify-content: space-around;
     gap: 2px;
-    padding: 20px;
+    padding: 15px;
     text-align: left;
 }
 
@@ -280,20 +243,39 @@ main button{
 }
 
 .datosIngresados{
-    margin: 0 auto;
-}
-
-.datosIngresados{
-    margin: 0 auto;
-    width: 600px;
+    margin-top: 40px;
+    padding: 50px;
+    background-color: #0e5068c9;
 }
 
 .datosIngresados p{
     text-align: center;
-    background-color: #0e5068;
+    font-size: 25px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.308);
+
 }
 
 .datosIngresados h2{
     text-align: center;
-    background-color: #0376a0;
+    font-size: 35px;
+    background-color: #3a52a0;
 }
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+form p{
+    color: white;
+    text-shadow: 2px 2px 2px black;
+    letter-spacing: 2px;
+}
+
+.parrafoinner{
+    color: white;
+    background-color: blue;
+}
+

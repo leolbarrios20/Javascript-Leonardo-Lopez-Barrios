@@ -1,13 +1,18 @@
+
+
 const nombre = document.getElementById("nombre");
 const apellido = document.getElementById("apellido");
 const edad = document.getElementById("edad");
 const cuotas = document.getElementById("cuotas");
 const prestamo = document.getElementById("prestamo");
 
-const nombreCliente = document.getElementById("nombreCliente");
-const edadCliente = document.getElementById("edadCliente");
-
-const datosIngresados = document.getElementById("datosIngresados");
+function errorCuotas(){
+  const cont = document.getElementById("formulario");
+  const parrafo = document.createElement("p");
+  const texto = document.createTextNode(`No podés abonar en ${cuotas.value} cuota/s. Elegí entre 12, 24 o 36.`);
+  parrafo.appendChild(texto);
+  cont.replaceChild(parrafo, cont.firstChild);
+}
 
 const reiniciar = document.getElementById("reiniciar");
 
@@ -15,31 +20,31 @@ class Cliente {
   constructor(nombre, apellido, edad, cuotas, prestamo, genero) {
       this.nombre = nombre;
       this.apellido = apellido;
-      this.edad = edad;
-      this.cuotas = cuotas;
-      this.prestamo = prestamo;
+      this.edad = Number(edad);
+      this.cuotas = Number(cuotas);
+      this.prestamo = Number(prestamo);
       this.genero = genero;
   }
 }
 
+const cliente = new Cliente(nombre.value, apellido.value, edad.value, cuotas.value, prestamo.value);
+
 const clientes = [];
 
+/*
 if(localStorage.getItem("clientes")) {
   let cliente = JSON.parse(localStorage.getItem("clientes"));
   for(let i = 0; i < cliente.length; i++ ) {
       clientes.push(cliente[i]);
   }
 }
+*/
+
+let [cliente1, cliente2, cliente3, cliente4, cliente5, cliente6, cliente7, cliente8, cliente9, cliente10] = clientes;
 
 const formulario = document.getElementById("formulario");
 
-/*
-function borrarForm(){
-  const cont = document.getElementById("child");
-  const hijo = cont.firstChild;
-  cont.removeChild(hijo);
-}
-*/
+const button = document.getElementById("button");
 
 function agregarCliente() {
   const nombre = document.getElementById("nombre").value;
@@ -50,8 +55,10 @@ function agregarCliente() {
   const genero = document.getElementById("genero");
   const nuevoCliente = new Cliente(nombre, apellido, edad, cuotas, prestamo, genero);
   clientes.push(nuevoCliente);
+  /*
   localStorage.setItem("clientes", JSON.stringify(clientes));
   formulario.reset();
+  */
 }
 
 function desliza(){
@@ -62,69 +69,91 @@ function desliza(){
   cont.replaceChild(parrafo, cont.firstChild);
 }
 
-function errorCuotas(){
-  const cont = document.getElementById("formulario");
-  const parrafo = document.createElement("p");
-  const texto = document.createTextNode(`No podés abonar en ${cuotas.value} cuota/s. Elegí entre 12, 24 o 36.`);
-  parrafo.appendChild(texto);
-  cont.replaceChild(parrafo, cont.firstChild);
+const datosIngresados = document.getElementById("datosIngresados");
+
+function mostrarDatos12() {
+    desliza();
+    agregarCliente();
+    datosIngresados.innerHTML = "";
+    clientes.forEach( cliente => {
+        const div = document.createElement("div");
+        div.innerHTML = `
+                        <div class = "datosIngresados">
+                          <h2>Datos Ingresados</h2>
+                          <p>Nombre del cliente: ${nombre.value + " " + apellido.value}</p>
+                          <p>Edad: ${edad.value} años</p>
+                          <p>Cuotas seleccionadas: ${cuotas.value}</p>
+                          <p>Prestamo simulado: ${prestamo.value}</p>
+                          <p>Monto mensual: ${(prestamo.value / cuotas.value * 1.45).toFixed(2)}</p>
+                          <p>Intereses por cuota: ${(prestamo.value / cuotas.value * 1.45 - (prestamo.value / cuotas.value)).toFixed(2)}</p>
+                          <p>Intereses totales: ${((prestamo.value / cuotas.value * 1.45 - (prestamo.value / cuotas.value)) * cuotas.value).toFixed(2)}</p>
+                        </div>
+                        `;
+        datosIngresados.appendChild(div);
+    })
+}
+
+function mostrarDatos24() {
+  desliza();
+  agregarCliente();
+  datosIngresados.innerHTML = "";
+  clientes.forEach( cliente => {
+      const div = document.createElement("div");
+      div.innerHTML = `
+                      <div class = "datosIngresados">
+                        <h2>Datos Ingresados</h2>
+                        <p>Nombre del cliente: ${nombre.value + " " + apellido.value}</p>
+                        <p>Edad: ${edad.value} años</p>
+                        <p>Cuotas seleccionadas: ${cuotas.value}</p>
+                        <p>Prestamo simulado: ${prestamo.value}</p>
+                        <p>Monto mensual: ${(prestamo.value / cuotas.value * 1.60).toFixed(2)}</p>
+                        <p>Intereses por cuota: ${(prestamo.value / cuotas.value * 1.60 - (prestamo.value / cuotas.value)).toFixed(2)}</p>
+                        <p>Intereses totales: ${((prestamo.value / cuotas.value * 1.60 - (prestamo.value / cuotas.value)) * cuotas.value).toFixed(2)}</p>
+                      </div>
+                      `;
+      datosIngresados.appendChild(div);
+  })
+}
+
+function mostrarDatos36() {
+  desliza();
+  agregarCliente();
+  datosIngresados.innerHTML = "";
+  clientes.forEach( cliente => {
+      const div = document.createElement("div");
+      div.innerHTML = `
+                      <div class = "datosIngresados">
+                        <h2>Datos Ingresados</h2>
+                        <p class = "parrafoinner">Nombre del cliente: ${nombre.value + " " + apellido.value}</p>
+                        <p class = "parrafoinner">Edad: ${edad.value} años</p>
+                        <p class = "parrafoinner">Cuotas seleccionadas: ${cuotas.value}</p>
+                        <p class = "parrafoinner">Prestamo simulado: ${prestamo.value}</p>
+                        <p class = "parrafoinner">Monto mensual: ${(prestamo.value / cuotas.value * 1.80).toFixed(2)}</p>
+                        <p class = "parrafoinner">Intereses por cuota: ${(prestamo.value / cuotas.value * 1.80 - (prestamo.value / cuotas.value)).toFixed(2)}</p>
+                        <p class = "parrafoinner">Intereses totales: ${((prestamo.value / cuotas.value * 1.80 - (prestamo.value / cuotas.value)) * cuotas.value).toFixed(2)}</p>
+                      </div>
+                      `;
+      datosIngresados.appendChild(div);
+  })
 }
 
 formulario.addEventListener("submit", (e) =>{
     e.preventDefault();
 
-    const nombre = document.getElementById("nombre");
+    let resultadoCuotas12 = Number((cuotas.value));
+    resultadoCuotas12 == 12 && mostrarDatos12();
+    resultadoCuotas12 != 12 && errorCuotas(); 
+        
+    let resultadoCuotas24 = Number((cuotas.value));
+    resultadoCuotas24 == 24 && mostrarDatos24();
 
-    const apellido = document.getElementById("apellido");
-    
-    const edad = document.getElementById("edad");
+    let resultadoCuotas36 = Number((cuotas.value));
+    resultadoCuotas36 == 36 && mostrarDatos36();
 
-    const prestamo = document.getElementById("prestamo");
-
-    const cuotas = document.getElementById("cuotas");
-
-    for(let i = 0; i < 1; i++){
-      if(cuotas.value == 12){
-        nombreCliente.innerHTML = (`Nombre del cliente: ${nombre.value} ${apellido.value}`);
-        edadCliente.innerHTML = (`Edad del cliente: ${edad.value} años`);
-        prestamoCliente.innerHTML = ("Préstamo personal solicitado: $" + prestamo.value);
-        montoMensual.innerHTML = ("Monto mensual a abonar: $" + (prestamo.value / cuotas.value * 1.45).toFixed(2));
-        interesesCuota.innerHTML = ("Intereses por cuota: $" + (prestamo.value / cuotas.value * 1.45 - (prestamo.value / cuotas.value)).toFixed(2));
-        interesesTotales.innerHTML = ("Intereses totales: $" + ((prestamo.value / cuotas.value * 1.45 - (prestamo.value / cuotas.value)) * cuotas.value).toFixed(2));
-        cuotasTotales.innerHTML = ("Cuotas a pagar: " + cuotas.value);
-        desliza();
-        agregarCliente();
-        console.log(clientes);
-        datosIngresados.innerHTML = (`Datos ingresados`);
-      }else if(cuotas.value == 24){
-        nombreCliente.innerHTML = (`Nombre del cliente: ${nombre.value} ${apellido.value}`);
-        edadCliente.innerHTML = (`Edad del cliente: ${edad.value} años`);
-        prestamoCliente.innerHTML = ("Préstamo personal solicitado: $" + prestamo.value);
-        montoMensual.innerHTML = ("Monto mensual a abonar: $" + (prestamo.value / cuotas.value * 1.60).toFixed(2));
-        interesesCuota.innerHTML = ("Intereses por cuota: $" + (prestamo.value / cuotas.value * 1.60 - (prestamo.value / cuotas.value)).toFixed(2));
-        interesesTotales.innerHTML = ("Intereses totales: $" + ((prestamo.value / cuotas.value * 1.60 - (prestamo.value / cuotas.value)) * cuotas.value).toFixed(2));
-        cuotasTotales.innerHTML = ("Cuotas a pagar: " + cuotas.value);
-        desliza();
-        agregarCliente();
-        console.log(clientes);
-      }else if(cuotas.value == 36){
-        nombreCliente.innerHTML = (`Nombre del cliente: ${nombre.value} ${apellido.value}`);
-        edadCliente.innerHTML = (`Edad del cliente: ${edad.value} años`);
-        prestamoCliente.innerHTML = ("Préstamo personal solicitado: $" + prestamo.value);
-        montoMensual.innerHTML = ("Monto mensual a abonar: $" + (prestamo.value / cuotas.value * 1.80).toFixed(2));
-        interesesCuota.innerHTML = ("Intereses por cuota: $" + (prestamo.value / cuotas.value * 1.80 - (prestamo.value / cuotas.value)).toFixed(2));
-        interesesTotales.innerHTML = ("Intereses totales: $" + ((prestamo.value / cuotas.value * 1.80 - (prestamo.value / cuotas.value)) * cuotas.value).toFixed(2));
-        cuotasTotales.innerHTML = ("Cuotas a pagar: " + cuotas.value);
-        desliza();
-        agregarCliente();
-        console.log(clientes);
-      }else{
-        errorCuotas();
-      }
-    }
 });
 
-const cliente = new Cliente(nombre.value, apellido.value, edad.value, cuotas.value, prestamo.value);
+
+
 
 function reinciarFormulario () {
   window.location.reload();
@@ -134,7 +163,10 @@ reiniciar.addEventListener("click", () => {
   reinciarFormulario(); 
 })
 
+/*
+location.assign("resultado.html");  
 
+window.location.replace("resultado.html");
+*/
 
-
-
+console.log(cliente);
