@@ -242,7 +242,7 @@ main button{
     display: flex;
     flex-direction: column;
     max-width: 500px;
-    max-height: 750px;
+    max-height: auto3;
     background: linear-gradient(45deg,#0e5068, #0376a0);
     border-radius: 15px;
     position: relative;
@@ -313,3 +313,17 @@ form p{
     background-color: blue;
 }
 
+#dataBank{
+    text-align: center;
+    height: 500px;
+    overflow-y: scroll;
+    background-color: rgba(253, 253, 253, 0.486);
+    margin: 25px;
+    padding: 25px3;
+}
+
+#dataBank h2{
+    text-align: center;
+    background-color: #0e5068;
+    padding: 25px;
+}

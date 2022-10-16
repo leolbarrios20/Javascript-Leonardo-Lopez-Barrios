@@ -1,4 +1,3 @@
-
 const nombre = document.getElementById("nombre");
 const apellido = document.getElementById("apellido");
 const edad = document.getElementById("edad");
@@ -13,15 +12,7 @@ function eliminarBoton(){
   let verDatos = document.getElementById("verDatos");
   verDatos.parentNode.removeChild(verDatos);
 }
-/*
-function errorCuotas(){
-  const cont = document.getElementById("formulario");
-  const parrafo = document.createElement("p");
-  const texto = document.createTextNode(`No podés abonar en ${cuotas.value} cuota/s. Elegí entre 12, 24 o 36.`);
-  parrafo.appendChild(texto);
-  cont.replaceChild(parrafo, cont.firstChild);
-}
-*/
+
 function errorCuotas(){
   Swal.fire({
     icon: "warning",
@@ -33,17 +24,9 @@ function errorCuotas(){
 function desliza(){
   Swal.fire({
     icon: "success",
-    title: "<p style = 'color: black; font-size: 20px; text-shadow: none'>" +  `${nombre.value}! Deslizá para visualizar los detalles.</p>`,
+    title: "<p style = 'color: black; font-size: 20px; text-shadow: none'>" +  `Deslizá para visualizar los detalles.</p>`,
     confirmButtonText: "Aceptar"
   });
-  
-  /*
-  const cont = document.getElementById("formulario");
-  const parrafo = document.createElement("p");
-  const texto = document.createTextNode("Deslizá hacia abajo para visualizar los detalles.");
-  parrafo.appendChild(texto);
-  cont.replaceChild(parrafo, cont.firstChild);
-  */
 }
 
 function agregarCliente() {
@@ -81,6 +64,7 @@ function mostrarDatos12() {
                         `;
         datosIngresados.appendChild(div);
     })
+    formulario.reset();
 }
 
 function mostrarDatos24() {
@@ -104,6 +88,7 @@ function mostrarDatos24() {
                       `;
       datosIngresados.appendChild(div);
   })
+  formulario.reset();
 }
 
 function mostrarDatos36() {
@@ -127,6 +112,7 @@ function mostrarDatos36() {
                       `;
       datosIngresados.appendChild(div);
   })
+  formulario.reset();
 }
 
 const reiniciar = document.getElementById("reiniciar");
@@ -172,10 +158,10 @@ formulario.addEventListener("submit", (e) =>{
   let resultadoCuotas36 = Number((cuotas.value));
   resultadoCuotas36 == 36 && mostrarDatos36();
 
-  formulario.reset();
 });
 
 reiniciar.addEventListener("click", () => {
   window.location.reload();
 })
+
 
