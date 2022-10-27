@@ -1,11 +1,9 @@
 button.addEventListener("click", () =>{
 
     location.assign("main.html");
-  
+
   });
 
-  
-  
   let dataBank = document.querySelector("#dataBank");
   fetch("https://api.estadisticasbcra.com/inflacion_interanual_oficial", {
     headers: {
@@ -14,12 +12,11 @@ button.addEventListener("click", () =>{
   })
   .then((response) => response.json())
   .then((data) => {
-    console.log(data);
 
     data.forEach((info) =>{
       const contenido = document.createElement("div")
       contenido.innerHTML = `
-        <h4> Año: ${info.d} la inflación es de ${info.v} </h4>
+        <h4> En la fecha: ${info.d} la inflación fue de %${info.v} </h4>
       `
       dataBank.append(contenido);
     })

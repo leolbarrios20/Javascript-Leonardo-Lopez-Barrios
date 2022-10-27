@@ -3,15 +3,18 @@ const apellido = document.getElementById("apellido");
 const edad = document.getElementById("edad");
 const cuotas = document.getElementById("cuotas");
 const prestamo = document.getElementById("prestamo");
+const email = document.getElementById("email");
 
 const datosIngresados = document.getElementById("datosIngresados");
 
-//*********************FUNCIONES********************//
+//Elimina el botón "Enviar" cuando se envía el formulario
 
 function eliminarBoton(){
   let verDatos = document.getElementById("verDatos");
   verDatos.parentNode.removeChild(verDatos);
 }
+
+//Alerta cuando hay un error en las cuotas seleccionadas
 
 function errorCuotas(){
   Swal.fire({
@@ -35,13 +38,9 @@ function agregarCliente() {
   const edad = document.getElementById("edad").value;
   const cuotas = document.getElementById("cuotas").value;
   const prestamo = document.getElementById("prestamo").value;
-  const genero = document.getElementById("genero");
-  const nuevoCliente = new Cliente(nombre, apellido, edad, cuotas, prestamo, genero);
+  const email = document.getElementById("email");
+  const nuevoCliente = new Cliente(nombre, apellido, edad, cuotas, prestamo, email);
   clientes.push(nuevoCliente);
-  /*
-  localStorage.setItem("clientes", JSON.stringify(clientes));
-  formulario.reset();
-  */
 }
 
 function mostrarDatos12() {
@@ -51,10 +50,11 @@ function mostrarDatos12() {
     clientes.forEach( cliente => {
         const div = document.createElement("div");
         div.innerHTML = `
-                        <div class = "datosIngresados">
+                        <div class = "datosIngresados mx-auto">
                           <h2>Datos Ingresados</h2>
                           <p>Nombre: ${nombre.value + " " + apellido.value}</p>
                           <p>Edad: ${edad.value} años</p>
+                          <p>Email: ${email.value}</p>
                           <p>Cuotas seleccionadas: ${cuotas.value}</p>
                           <p>Prestamo simulado: $${prestamo.value}</p>
                           <p>Monto mensual: $${(prestamo.value / cuotas.value * 1.45).toFixed(2)}</p>
@@ -75,10 +75,11 @@ function mostrarDatos24() {
   clientes.forEach( cliente => {
       const div = document.createElement("div");
       div.innerHTML = `
-                      <div class = "datosIngresados">
+                      <div class = "datosIngresados mx-auto">
                         <h2>Datos Ingresados</h2>
                         <p>Nombre: ${nombre.value + " " + apellido.value}</p>
                         <p>Edad: ${edad.value} años</p>
+                        <p>Email: ${email.value}</p>
                         <p>Cuotas seleccionadas: ${cuotas.value}</p>
                         <p>Prestamo simulado: $${prestamo.value}</p>
                         <p>Monto mensual: $${(prestamo.value / cuotas.value * 1.60).toFixed(2)}</p>
@@ -99,10 +100,11 @@ function mostrarDatos36() {
   clientes.forEach( cliente => {
       const div = document.createElement("div");
       div.innerHTML = `
-                      <div class = "datosIngresados">
+                      <div class = "datosIngresados mx-auto">
                         <h2>Datos Ingresados</h2>
                         <p>Nombre: ${nombre.value + " " + apellido.value}</p>
                         <p>Edad: ${edad.value} años</p>
+                        <p>Email: ${email.value}</p>
                         <p>Cuotas seleccionadas: ${cuotas.value}</p>
                         <p>Prestamo simulado: $${prestamo.value}</p>
                         <p>Monto mensual: $${(prestamo.value / cuotas.value * 1.80).toFixed(2)}</p>
@@ -118,28 +120,20 @@ function mostrarDatos36() {
 const reiniciar = document.getElementById("reiniciar");
 
 class Cliente {
-  constructor(nombre, apellido, edad, cuotas, prestamo, genero) {
+  constructor(nombre, apellido, edad, cuotas, prestamo, email) {
       this.nombre = nombre;
       this.apellido = apellido;
       this.edad = Number(edad);
       this.cuotas = Number(cuotas);
       this.prestamo = Number(prestamo);
-      this.genero = genero;
+      this.email = email;
   }
 }
 
-const cliente = new Cliente(nombre.value, apellido.value, edad.value, cuotas.value, prestamo.value);
+const cliente = new Cliente(nombre.value, apellido.value, edad.value, email.value, cuotas.value, prestamo.value);
 
 const clientes = [];
 
-/*
-if(localStorage.getItem("clientes")) {
-  let cliente = JSON.parse(localStorage.getItem("clientes"));
-  for(let i = 0; i < cliente.length; i++ ) {
-      clientes.push(cliente[i]);
-  }
-}
-*/
 
 let [cliente1, cliente2, cliente3, cliente4, cliente5, cliente6, cliente7, cliente8, cliente9, cliente10] = clientes;
 
@@ -147,7 +141,7 @@ const formulario = document.getElementById("formulario");
 
 formulario.addEventListener("submit", (e) =>{
   e.preventDefault();
-  
+
   let resultadoCuotas12 = Number((cuotas.value));
   resultadoCuotas12 == 12 && mostrarDatos12();
   resultadoCuotas12 != 12 && errorCuotas(); 
@@ -160,8 +154,11 @@ formulario.addEventListener("submit", (e) =>{
 
 });
 
+//recarga la página
+
 reiniciar.addEventListener("click", () => {
   window.location.reload();
 })
+
 
 

@@ -7,9 +7,9 @@
 }
 
 .background{
-    background-image: url(https://imagenes.elpais.com/resizer/4oLrYXOG4cD5TI-Lr7-TveA_Fgo=/980x0/cloudfront-eu-central-1.images.arcpublishing.com/prisa/42E5UMZFJ5AVPCP3RWNIDZJZTA.jpg);
+    background-image: url(./PqxKXg-1280.jpg);
     background-position: center;
-    background-color: rgba(0, 0, 0, 0.295);
+    background-color: rgba(0, 0, 0, 0.26);
     background-blend-mode: darken;
     background-repeat: no-repeat;
     background-size: cover;
@@ -50,8 +50,8 @@
 }
 
 header{
-    background-color: #0e5068c9;
-    padding: 10px;
+    background-color: #0313bdab;
+    padding: 25px;
     width: 100%;
 }
 
@@ -78,14 +78,6 @@ main form{
 }
 
 
-h1, h2{
-    text-align: center;
-    font-family: 'Prompt', sans-serif;
-    font-size: 35px;
-    color: rgb(220, 220, 220);
-    text-shadow: 2px 2px 2px black;
-}
-
 .tituloFlex{
     display: flex; 
     flex-direction: column;
@@ -95,9 +87,26 @@ h1, h2{
     margin: 0 auto;
 }
 
+.tituloFlex .info{
+    background-color: rgba(207, 207, 207, 0.899);
+    margin-bottom: 20px;
+    padding: 25px;
+    border-radius: 20px;
+    max-width: 550px;
+    box-shadow: 2px 2px 50px black; 
+}
+
+.tituloFlex .info p{
+    color: rgb(0, 0, 0);
+    font-family: 'Prompt', sans-serif;
+    font-size: 18px;
+    text-align: left;
+    font-weight: 500;
+}
+
 .requisitosContainer{
     text-align: left;
-    background-color: rgba(207, 207, 207, 0.596);
+    background-color: rgba(207, 207, 207, 0.896);
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -105,6 +114,7 @@ h1, h2{
     padding: 30px;
     margin: 10px;
     max-width: 550px;
+    box-shadow: 2px 2px 50px black;
 }
 
 .requisitosContainer .flex-parrafo .icon-arrow{
@@ -137,25 +147,24 @@ h1, h2{
 .conseguiCredito{
     padding: 25px;
     border-radius: 20px;
-    max-width: 600px;
-    height: 300px;
+    margin-bottom: 20px;
 }
 
 .conseguiCredito h1{
-    font-size: 55px;
+    font-size: 70px;
+    color: rgb(24, 24, 24);
 }
 
 .conseguiCredito h2{
-    color: rgb(243, 243, 243);
+    color: rgb(24, 24, 24);
     font-weight: 500;
 }
 
 .conseguiCredito h3{
-    color: rgb(238, 238, 238);
+    color: rgb(24, 24, 24);
     padding-top: 20px;
     font-size: 25px;
     font-family: 'Prompt', sans-serif;
-    text-shadow: 2px 2px 2px black;
     font-weight: 400;
 }
 
@@ -186,14 +195,6 @@ main button{
     flex-direction: row;
     padding-top: 150px;
 }
-
-#miFormulario label{
-    font-size: 18px;
-    color: white;
-    text-align: left;
-    padding-bottom: 10px;
-}
-
 
 @media screen and (max-width: 500px) {
  
@@ -229,7 +230,6 @@ main button{
         font-size: 18px;
         font-weight: 500;
         padding: 4px;
-        color: rgb(255, 255, 255);
         letter-spacing: 3px;
     }
 
@@ -242,11 +242,10 @@ main button{
     display: flex;
     flex-direction: column;
     max-width: 500px;
-    max-height: auto3;
-    background: linear-gradient(45deg,#0e5068, #0376a0);
+    max-height: auto;
+    background: linear-gradient(90deg, #1600d8be, #0b8893da);
     border-radius: 15px;
-    position: relative;
-    top: 20px;
+    margin-top: 70px;
     padding: 7px;
 }
 
@@ -259,32 +258,39 @@ main button{
     text-align: left;
 }
 
-.formularioFlex input, select{
-    padding: 7px;
-}
-
 .formularioFlex label{
     color: white;
     font-size: 15px;
     font-family: 'Prompt', sans-serif;
 }
 
+.formularioFlex input, select{
+    padding: 7px;
+    background-color: rgba(255, 255, 255, 0.753);
+}
+
+
+
+
 #formulario button{
-    margin-top: 10px;
+    margin: 10px;
 }
 
 .datosIngresados{
     margin-top: 40px;
-    padding: 50px;
-    background-color: rgba(0, 0, 0, 0.541);
+    margin-bottom: 40px;
+    padding: 15px;
+    background: linear-gradient(90deg, #360033c4, #0b8893c9);
     border-radius: 15px;
-    width: 100%;
+    max-width: 500px;
 }
 
 .datosIngresados h2{
+    color: white;
     text-align: center;
     font-size: 40px;
     padding: 20px;
+    background-color: #000000b2;
 }
 
 .datosIngresados p{
@@ -293,6 +299,7 @@ main button{
     font-weight: 400;
     padding: 10px;
     color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 5px black;
     letter-spacing: 3px;
 }
 
@@ -308,10 +315,6 @@ form p{
     letter-spacing: 2px;
 }
 
-.parrafoinner{
-    color: white;
-    background-color: blue;
-}
 
 #dataBank{
     text-align: center;
@@ -324,6 +327,7 @@ form p{
 
 #dataBank h2{
     text-align: center;
-    background-color: #0e5068;
+    background-color: #0313bdab;
     padding: 25px;
+    color: white;
 }
